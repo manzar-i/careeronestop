@@ -2,59 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>The Mandate — one.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,700;1,900&display=swap" rel="stylesheet">
+    <title>Mandate — one.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #ffffff; --black: #06151a; --accent: #06a4a0; --muted: #64748b; --border: #EEEEEE; --glass: rgba(255, 255, 255, 0.8); }
-        * { box-sizing: border-box; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
-        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--black); line-height: 1.2; overflow-x: hidden; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        :root { --mint: #28B8A6; --charcoal: #121212; }
+        body { margin: 0; font-family: 'Inter'; background: #fff; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 40px; }
         
-        header { padding: 24px 0; border-bottom: 1px solid var(--border); }
-        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 28px; font-weight: 900; color: var(--black); text-decoration: none; letter-spacing: -1.5px; }
-        .logo span { color: var(--accent); }
-        nav a { text-decoration: none; color: var(--muted); font-weight: 600; font-size: 14px; margin-left: 30px; }
-        .nav-active { color: var(--black) !important; }
+        .manifesto { padding: 180px 0 100px; }
+        .manifesto h1 { font-family: 'Playfair Display'; font-size: 82px; margin-bottom: 40px; }
+        .manifesto p { font-size: 26px; line-height: 1.8; font-weight: 300; color: #1e293b; }
 
-        .mandate-section { padding: 220px 0 160px; }
-        .mandate-text { font-family: 'Playfair Display', serif; font-size: clamp(40px, 7vw, 78px); letter-spacing: -3px; line-height: 1.1; opacity: 0; transform: translateY(30px); animation: reveal 1s forwards; }
-        .mandate-text strong { color: var(--accent); font-weight: 900; }
+        .stats-section { padding: 100px 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; border-top: 1px solid #eee; }
+        .stat-box { text-align: center; }
+        .stat-box h2 { font-family: 'Playfair Display'; font-size: 72px; color: var(--mint); margin: 0; }
+        .stat-box p { text-transform: uppercase; letter-spacing: 2px; font-weight: 700; font-size: 13px; color: #94a3b8; }
         
-        .cta-box { margin: 120px 0; padding: 140px 100px; background: var(--black); color: #fff; border-radius: 12px; text-align: center; }
-        .cta-box h2 { font-family: 'Playfair Display', serif; font-size: 64px; margin-bottom: 48px; letter-spacing: -2px; }
-        .btn-glow { 
-            background: var(--accent); color: #fff; padding: 24px 60px; border-radius: 8px; 
-            text-decoration: none; font-weight: 800; font-size: 20px; display: inline-block; 
-            box-shadow: 0 0 50px rgba(6,164,160,0.5); 
-        }
-        .btn-glow:hover { transform: scale(1.05); box-shadow: 0 0 70px rgba(6,164,160,0.7); }
-
-        @keyframes reveal { to { opacity: 1; transform: translateY(0); } }
+        footer { background: var(--charcoal); color: #fff; padding: 100px 0; margin-top: 100px; }
     </style>
 </head>
 <body>
-    <header><div class="container nav-flex">
-        <a href="index.html" class="logo">one<span>.</span></a>
-        <nav>
-            <a href="index.html">Companies</a>
-            <a href="talent.html">Talent</a>
-            <a href="concierge.html">Concierge</a>
-            <a href="about.html" class="nav-active">Mandate</a>
-        </nav>
-    </div></header>
+    <div class="container manifesto">
+        <h1>Selection over Volume.</h1>
+        <p>Career One Stop operates on a high-conviction model. We don't spam resumes; we curate outcomes. Quality is the only metric that matters. We bridge the gap between India's top 1% and the global teams that need them.</p>
 
-    <div class="container mandate-section">
-        <div class="mandate-text">
-            Recruitment is broken. Most firms focus on volume. We operate on a <strong>High-Conviction</strong> Selection Mandate. one. is the infrastructure for founders who don't want more candidates, but the <strong>only</strong> ones that matter.
+        <div class="stats-section">
+            <div class="stat-box"><h2>98%</h2><p>Retention Rate</p></div>
+            <div class="stat-item"><div class="stat-box"><h2>1%</h2><p>Selection Tier</p></div></div>
+            <div class="stat-box"><h2>15d</h2><p>Time-to-Hire</p></div>
         </div>
     </div>
 
-    <div class="container">
-        <section class="cta-box">
-            <h2>Ready to build?</h2>
-            <a href="mailto:hiring@careeronestop.in" class="btn-glow">Request Talent Access</a>
-        </section>
-    </div>
+    <footer>
+        <div class="container" style="display:flex; justify-content:space-between; align-items:flex-end;">
+            <div>
+                <div style="font-family:'Playfair Display'; font-size:48px; color:#28B8A6; margin-bottom:20px;">one.</div>
+                <p style="opacity:0.4; font-size:14px;">The 1% Standard. Elite Talent Agency.</p>
+            </div>
+            <div style="display:flex; gap:60px; text-align:right;">
+                <div><a href="index.html" style="color:#fff; text-decoration:none; display:block; margin-bottom:10px;">Mandate</a><a href="talent.html" style="color:#fff; text-decoration:none;">Talent</a></div>
+                <div><a href="#" style="color:#fff; text-decoration:none; display:block; margin-bottom:10px;">LinkedIn</a><a href="mailto:hiring@careeronestop.in" style="color:#fff; text-decoration:none;">Contact</a></div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
