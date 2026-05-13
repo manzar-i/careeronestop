@@ -2,39 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>Career Concierge — one.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@1,700;1,800&display=swap" rel="stylesheet">
+    <title>Concierge — one.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,700;1,900&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #ffffff; --black: #06151a; --accent: #06a4a0; --muted: #64748b; --border: rgba(255,255,255,0.1); --font-main: 'Inter', sans-serif; --font-serif: 'Playfair Display', serif; }
-        * { box-sizing: border-box; }
-        body { margin: 0; font-family: var(--font-main); background: var(--black); color: #fff; line-height: 1.6; overflow-x: hidden; }
-        .container { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
-        header { padding: 32px 0; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; background: rgba(6,21,26,0.85); backdrop-filter: blur(20px); z-index: 1000; border-bottom: 1px solid var(--border); }
-        .logo { font-size: 32px; font-weight: 900; color: #fff; text-decoration: none; letter-spacing: -2px; }
-        .logo span { color: var(--accent); }
-        nav a { text-decoration: none; color: rgba(255,255,255,0.5); font-weight: 600; font-size: 15px; margin-left: 40px; }
-        .nav-active { color: #fff !important; font-weight: 800; position: relative; }
-        .nav-active::after { content: ""; position: absolute; bottom: -41px; left: 0; width: 100%; height: 3px; background: var(--accent); }
-        .btn-cta { background: #fff; color: var(--black); padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 700; }
+        /* ... shared styles as above ... */
+        :root { --accent: #06a4a0; --black: #06151a; --border: #EEEEEE; }
+        body { background: #fff; margin:0; font-family:'Inter'; }
+        .container { max-width: 1200px; margin:0 auto; padding: 0 40px; }
         
-        .hero { padding: 220px 0 100px; text-align: center; position: relative; }
-        .hero::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 80%; height: 100%; background: radial-gradient(circle, rgba(6, 164, 160, 0.2) 0%, transparent 70%); z-index: -1; filter: blur(100px); }
-        .hero h1 { font-family: var(--font-serif); font-size: clamp(48px, 9vw, 82px); margin: 0 0 48px; letter-spacing: -3px; }
-        .hero h1 em { font-style: italic; color: var(--accent); }
-        .hero p { max-width: 800px; margin: 0 auto 64px; font-size: 26px; opacity: 0.7; }
+        .glass-hero { padding: 180px 0 100px; text-align: center; }
+        .glass-hero h1 { font-family: 'Playfair Display'; font-size: 72px; letter-spacing: -2px; }
+        .glass-hero em { font-style: italic; color: var(--accent); }
 
-        .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; padding: 120px 0; }
-        .service-item { padding: 100px 60px; border: 1px solid var(--border); border-radius: 60px; background: rgba(255,255,255,0.03); }
-        .service-item h3 { font-family: var(--font-serif); font-size: 48px; margin-bottom: 24px; color: var(--accent); }
-        .service-item p { font-size: 20px; opacity: 0.6; }
+        .vip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding-bottom: 150px; }
+        
+        /* Part 6: VIP Glass Cards */
+        .vip-card { 
+            background: rgba(255, 255, 255, 0.4); 
+            backdrop-filter: blur(20px); 
+            border: 1px solid var(--border); 
+            border-radius: 12px; 
+            padding: 80px 60px; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.04);
+            text-align: center;
+        }
+        .vip-card:hover { border-color: var(--accent); transform: scale(1.02); }
+        .abstract-icon { width: 80px; height: 80px; margin: 0 auto 40px; border: 1.5px solid var(--accent); transform: rotate(45deg); display: flex; align-items: center; justify-content: center; }
+        .abstract-icon div { width: 30px; height: 30px; background: var(--accent); opacity: 0.2; }
+        
+        .vip-card h2 { font-family: 'Playfair Display'; font-size: 42px; margin-bottom: 20px; }
+        .vip-card p { font-size: 18px; color: #64748b; line-height: 1.6; }
     </style>
 </head>
 <body>
-    <header><div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;"><a href="index.html" class="logo">one<span>.</span></a><nav><a href="index.html">Companies</a><a href="talent.html">Talent</a><a href="concierge.html" class="nav-active">Concierge</a><a href="about.html">Mandate</a><a href="mailto:hiring@careeronestop.in" class="btn-cta">Apply for Representation</a></nav></div></header>
-    <div class="container"><section class="hero"><h1>Personal Talent Representation for the <em>Top 1%.</em></h1><p>In professional sports, the best athletes have agents. In tech, you have Career One Stop. We provide end-to-back representation: from crafting your professional narrative to bypassing HR 'black holes' and securing equity-heavy packages.</p></section>
-        <div class="service-grid">
-            <div class="service-item"><h3>The Network</h3><p>Direct, high-intent introductions to Founders and VPs.</p></div>
-            <div class="service-item"><h3>The Closing</h3><p>Expert negotiation to ensure your compensation reflects your true market impact.</p></div>
+    <header style="background:rgba(255,255,255,0.8); backdrop-filter:blur(10px); position:sticky; top:0; padding:20px 0; border-bottom:1px solid #eee;">
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+            <a href="index.html" style="text-decoration:none; color:#06151a; font-weight:900; font-size:24px;">one.</a>
+            <a href="mailto:hiring@careeronestop.in" style="background:#06a4a0; color:#fff; text-decoration:none; padding:10px 20px; border-radius:8px; font-weight:700; font-size:13px;">Apply for Representation</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="glass-hero">
+            <h1>Personal Talent <em>representation</em> for the Top 1%.</h1>
+            <p style="font-size: 22px; color: #64748b; max-width: 800px; margin: 0 auto 60px;">We provide end-to-back representation: from crafting your professional narrative to bypassing HR 'black holes'.</p>
+        </section>
+
+        <div class="vip-grid">
+            <div class="vip-card">
+                <div class="abstract-icon"><div></div></div>
+                <h2>Personal Advocacy</h2>
+                <p>Direct, high-intent introductions to Founders and VPs that prioritize impact over automation.</p>
+            </div>
+            <div class="vip-card">
+                <div class="abstract-icon" style="border-radius: 50%;"><div></div></div>
+                <h2>Negotiation Table</h2>
+                <p>Expert negotiation to ensure your compensation reflects your true market impact and equity potential.</p>
+            </div>
         </div>
     </div>
 </body>
