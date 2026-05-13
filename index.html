@@ -2,69 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>one. — India's Selection Mandate</title>
+    <title>one. — India's Elite Selection Mandate</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@1,700;1,900&display=swap" rel="stylesheet">
     <style>
         :root { --bg: #ffffff; --black: #06151a; --accent: #06a4a0; --muted: #64748b; --border: rgba(0,0,0,0.06); --font-main: 'Inter', sans-serif; --font-serif: 'Playfair Display', serif; }
         * { box-sizing: border-box; }
         body { margin: 0; font-family: var(--font-main); background: var(--bg); color: var(--black); line-height: 1.6; overflow-x: hidden; }
         .container { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
-        
-        /* Navigation 10/10 */
-        header { padding: 24px 0; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); z-index: 1000; border-bottom: 1px solid var(--border); }
+        header { padding: 32px 0; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); z-index: 1000; border-bottom: 1px solid var(--border); }
         .logo { font-size: 32px; font-weight: 900; color: var(--black); text-decoration: none; letter-spacing: -2px; }
         .logo span { color: var(--accent); }
         nav { display: flex; align-items: center; gap: 40px; }
         nav a { text-decoration: none; color: var(--muted); font-weight: 600; font-size: 15px; transition: 0.3s; }
-        nav a:hover { color: var(--accent); }
         .nav-active { color: var(--black); font-weight: 800; position: relative; }
-        .nav-active::after { content: ""; position: absolute; bottom: -33px; left: 0; width: 100%; height: 3px; background: var(--accent); }
-        .btn-cta { background: var(--black); color: #fff; padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 14px; transition: 0.3s; }
-
-        /* Animation 10/10 */
-        @keyframes reveal { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-        .reveal { animation: reveal 1s cubic-bezier(0.19, 1, 0.22, 1) forwards; opacity: 0; }
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-
-        /* Hero */
-        .hero { padding: 180px 0 100px; text-align: center; position: relative; }
-        .hero::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 80%; height: 100%; background: radial-gradient(circle, rgba(6, 164, 160, 0.05) 0%, transparent 70%); z-index: -1; }
-        .hero h1 { font-family: var(--font-serif); font-size: clamp(60px, 12vw, 120px); line-height: 0.85; margin: 0 0 40px; letter-spacing: -6px; }
-        .hero h1 em { font-style: italic; color: var(--accent); font-weight: 900; }
-        .hero p { max-width: 750px; margin: 0 auto 60px; color: var(--muted); font-size: 24px; line-height: 1.4; }
-
-        /* Ticker */
-        .ticker { padding: 80px 0; background: var(--black); color: #fff; overflow: hidden; margin-top: 100px; }
-        .ticker-inner { display: flex; gap: 100px; width: max-content; align-items: center; animation: scroll 40s linear infinite; }
-        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        .ticker span { font-size: 32px; font-weight: 900; opacity: 0.4; letter-spacing: -1px; }
-
-        /* Bento Grid */
-        .bento-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; padding: 100px 0; }
-        .bento-card { background: #f9fafc; border-radius: 40px; padding: 60px; border: 1px solid var(--border); }
-        .bento-card h2 { font-family: var(--font-serif); font-size: 48px; margin: 0 0 20px; letter-spacing: -2px; }
+        .nav-active::after { content: ""; position: absolute; bottom: -41px; left: 0; width: 100%; height: 3px; background: var(--accent); }
+        .btn-cta { background: var(--black); color: #fff; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 14px; transition: 0.3s; }
         
-        footer { padding: 100px 0; border-top: 1px solid var(--border); background: #fff; text-align: center; }
-        @media (max-width: 900px) { nav { display: none; } .hero h1 { font-size: 60px; } .bento-grid { grid-template-columns: 1fr; } }
+        .hero { padding: 220px 0 140px; text-align: center; }
+        .hero h1 { font-family: var(--font-serif); font-size: clamp(64px, 12vw, 110px); line-height: 0.9; margin: 0 0 48px; letter-spacing: -5px; }
+        .hero h1 em { font-style: italic; color: var(--accent); font-weight: 900; }
+        .hero p { max-width: 800px; margin: 0 auto 64px; color: var(--muted); font-size: 26px; line-height: 1.5; font-weight: 400; }
+        
+        .stats-strip { display: flex; justify-content: center; gap: 80px; padding: 100px 0; border-bottom: 1px solid var(--border); }
+        .stat-item h3 { font-size: 48px; font-weight: 900; margin: 0; color: var(--black); }
+        .stat-item p { text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 800; color: var(--muted); margin: 10px 0 0; }
+
+        .ticker { padding: 100px 0; background: var(--black); color: #fff; overflow: hidden; }
+        .ticker-inner { display: flex; gap: 120px; width: max-content; align-items: center; animation: scroll 45s linear infinite; }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .ticker span { font-size: 36px; font-weight: 900; opacity: 0.4; }
+
+        @keyframes reveal { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .reveal { animation: reveal 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards; }
     </style>
 </head>
 <body>
     <header><div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
         <a href="index.html" class="logo">one<span>.</span></a>
-        <nav>
-            <a href="index.html" class="nav-active">Companies</a>
-            <a href="talent.html">Talent</a>
-            <a href="concierge.html">Concierge</a>
-            <a href="about.html">Mandate</a>
-            <a href="mailto:hiring@careeronestop.in" class="btn-cta">Start Hiring</a>
-        </nav>
+        <nav><a href="index.html" class="nav-active">Companies</a><a href="talent.html">Talent</a><a href="concierge.html">Concierge</a><a href="about.html">Mandate</a><a href="mailto:hiring@careeronestop.in" class="btn-cta">Request Talent Access</a></nav>
     </div></header>
 
-    <section class="hero container">
-        <h1 class="reveal">Hire India's <br><em>1%</em> engine.</h1>
-        <p class="reveal delay-1">Stop recruiting. Start selecting. We deliver high-velocity talent infrastructure for teams that build for scale.</p>
-        <div class="reveal delay-2"><a href="mailto:hiring@careeronestop.in" class="btn-cta" style="padding: 24px 50px; font-size: 18px;">Build your team</a></div>
+    <section class="hero container reveal">
+        <h1>Build your India Engineering Hub with the <em>Top 1%.</em></h1>
+        <p>We source, screen, and represent the elite 1% of Indian tech talent. Skip the resume filters and hire interview-ready leads in under 15 days.</p>
+        <a href="mailto:hiring@careeronestop.in" class="btn-cta" style="padding: 24px 60px; font-size: 18px;">Secure Elite Talent</a>
     </section>
 
     <div class="ticker"><div class="ticker-inner">
@@ -72,9 +53,10 @@
         <span>SCALER</span><span>AIRTEL</span><span>PAYTM</span><span>CASHFREE</span><span>FYND</span><span>HAPTIK</span><span>WISHUP</span><span>NEWTON</span>
     </div></div>
 
-    <div class="container bento-grid">
-        <div class="bento-card reveal"><h2>Selection-first <br>delivery.</h2><p>Every introduction is vetted through a high-conviction mandate. We solve for retention, not just head count.</p></div>
-        <div class="bento-card reveal delay-1" style="background: var(--accent); color: #fff; border:none;"><h2 style="color:#fff;">15 Days.</h2><p style="opacity:0.8;">Our average time-to-hire for leadership and core tech roles.</p></div>
+    <div class="container stats-strip reveal">
+        <div class="stat-item"><h3>98%</h3><p>Retention Rate</p></div>
+        <div class="stat-item"><h3>1%</h3><p>Selection Mandate</p></div>
+        <div class="stat-item"><h3>15d</h3><p>Time-to-Hire</p></div>
     </div>
 </body>
 </html>
