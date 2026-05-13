@@ -2,149 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>one. — Precision Talent Mandate</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,700;1,900&display=swap" rel="stylesheet">
+    <title>one. — The Top 1% of Indian Tech Talent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
-        :root { 
-            --bg: #ffffff; --black: #06151a; --accent: #06a4a0; --muted: #64748b; 
-            --border: #EEEEEE; --glass: rgba(255, 255, 255, 0.8);
-        }
-        * { box-sizing: border-box; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
-        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--black); line-height: 1.6; }
+        :root { --mint: #28B8A6; --black: #06151a; --charcoal: #121212; --glass: rgba(255, 255, 255, 0.05); }
+        * { box-sizing: border-box; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        body { margin: 0; font-family: 'Inter', sans-serif; background: #ffffff; color: var(--black); line-height: 1.6; letter-spacing: 0.02em; }
         .container { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
         
-        /* Part 2: Glass Header */
-        header { 
-            padding: 20px 0; position: sticky; top: 0; z-index: 1000; 
-            background: var(--glass); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid transparent;
-        }
-        header.scrolled { border-bottom: 1px solid var(--black); }
-        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 28px; font-weight: 900; color: var(--black); text-decoration: none; letter-spacing: -1.5px; }
-        .logo span { color: var(--accent); }
+        /* Navigation 10/10 */
+        header { padding: 20px 0; position: sticky; top:0; background: rgba(255,255,255,0.7); backdrop-filter: blur(15px); z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .logo { font-family: 'Playfair Display'; font-size: 28px; font-weight: 700; color: var(--black); text-decoration: none; }
+        .logo span { color: var(--mint); }
         nav { display: flex; align-items: center; gap: 30px; }
-        .nav-link { text-decoration: none; color: var(--muted); font-weight: 500; font-size: 14px; }
-        .btn-outline { border: 1px solid var(--accent); color: var(--accent); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; }
-        .btn-fill { background: var(--accent); color: #fff; padding: 11px 21px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; }
+        nav a { text-decoration: none; color: var(--black); font-weight: 600; font-size: 14px; opacity: 0.7; }
+        nav a:hover { opacity: 1; }
+        .btn-ghost { border: 1px solid var(--mint); color: var(--mint); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 700; }
+        .btn-solid { background: var(--mint); color: var(--charcoal); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 700; }
 
-        /* Part 1 & 5: Hero & Animation */
-        .hero { padding: 180px 0 120px; text-align: center; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(50px, 8vw, 95px); line-height: 1.1; margin-bottom: 40px; letter-spacing: -3px; }
-        .hero h1 em { font-style: italic; color: var(--accent); font-weight: 900; }
-        .hero p { max-width: 700px; margin: 0 auto 60px; font-size: 22px; color: var(--muted); }
-
-        /* Social Proof Ticker */
-        .ticker-wrap { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 40px 0; overflow: hidden; }
-        .logos { display: flex; gap: 100px; width: max-content; animation: scroll 40s linear infinite; }
-        .logos:hover { animation-play-state: paused; }
-        .logos span { font-size: 24px; font-weight: 800; opacity: 0.3; }
+        /* Hero Section */
+        .hero { padding: 180px 0 100px; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(50px, 8vw, 95px); line-height: 1.1; margin-bottom: 30px; letter-spacing: -0.03em; }
+        .shimmer { color: var(--mint); position: relative; display: inline-block; animation: shimmer 2.5s infinite; }
+        @keyframes shimmer { 0%, 100% { text-shadow: 0 0 0px var(--mint); } 50% { text-shadow: 0 0 20px var(--mint); } }
+        .hero p { max-width: 700px; margin: 0 auto 50px; font-size: 22px; color: #64748b; font-weight: 300; }
+        
+        /* Logo Ticker */
+        .ticker-wrap { padding: 60px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; overflow: hidden; margin-top: 50px; }
+        .logos { display: flex; width: max-content; gap: 100px; animation: scroll 40s linear infinite; }
+        .logos span { font-size: 24px; font-weight: 800; filter: grayscale(100%); opacity: 0.3; }
+        .logos span:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        /* Part 6: Talent Cards */
-        .talent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 100px 0; }
-        .talent-card { 
-            background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 40px; 
-            position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            opacity: 0; transform: translateY(20px); /* Animation entry */
-        }
-        .talent-card.visible { opacity: 1; transform: translateY(0); }
-        .talent-card:hover { transform: scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.08), 0 0 15px rgba(6, 164, 160, 0.1); border-color: var(--accent); }
-        
-        .badge { position: absolute; top: 20px; right: 20px; font-size: 10px; font-weight: 900; color: var(--accent); border: 1px solid var(--accent); padding: 4px 8px; border-radius: 4px; text-transform: uppercase; }
-        .monogram { width: 60px; height: 60px; border-radius: 8px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--black); background: #fafafa; margin-bottom: 20px; }
-        
-        .tag-wrap { display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
-        .tag { font-size: 11px; font-weight: 700; color: var(--accent); border: 1px solid rgba(6, 164, 160, 0.2); padding: 4px 10px; border-radius: 99px; }
+        /* Stats Grid */
+        .stats-strip { display: flex; justify-content: center; gap: 80px; padding: 100px 0; }
+        .stat-card { text-align: center; }
+        .stat-card h3 { font-family: 'Playfair Display'; font-size: 48px; margin: 0; color: var(--mint); }
+        .stat-card p { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #94a3b8; }
 
-        /* Part 2: Fat Footer */
-        footer { background: var(--black); color: #fff; padding: 120px 0 60px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; }
-        .footer-col h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 25px; }
-        .footer-col a { display: block; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 12px; font-size: 14px; }
-        .footer-col a:hover { color: var(--accent); }
+        /* Animation */
+        .reveal { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.8s forwards; }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
-    <header id="header">
-        <div class="container nav-flex">
-            <a href="index.html" class="logo">one<span>.</span></a>
-            <nav>
-                <a href="index.html" class="nav-link">Companies</a>
-                <a href="talent.html" class="nav-link">Talent</a>
-                <a href="about.html" class="nav-link">Mandate</a>
-                <a href="talent.html" class="btn-fill">Apply for Representation</a>
-                <a href="mailto:hiring@careeronestop.in" class="btn-outline">Hire Elite Talent</a>
-            </nav>
-        </div>
-    </header>
+    <header><div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+        <a href="index.html" class="logo">one<span>.</span></a>
+        <nav>
+            <a href="about.html">Mandate</a>
+            <a href="talent.html">Talent</a>
+            <a href="concierge.html" class="btn-ghost">Advance Your Career</a>
+            <a href="mailto:hiring@careeronestop.in" class="btn-solid">Book a Hiring Call</a>
+        </nav>
+    </div></header>
 
     <div class="container">
-        <section class="hero">
-            <h1>Build your India <em>Engineering</em> Hub with the Top 1%.</h1>
-            <p>We source, screen, and represent the elite 1% of Indian tech talent. Skip the resume filters and hire interview-ready leads in under 15 days.</p>
-            <a href="mailto:hiring@careeronestop.in" class="btn-fill" style="padding: 20px 40px; font-size: 16px;">Secure Elite Talent</a>
+        <section class="hero reveal">
+            <h1>The Top 1% of Indian Tech Talent. <br><span class="shimmer">Deployed</span> in 15 Days.</h1>
+            <p>Stop filtering through thousands of average resumes. We source, vet, and represent the elite engineering, product, and sales leads that global scale-ups actually need.</p>
+            <a href="mailto:hiring@careeronestop.in" class="btn-solid" style="padding: 20px 40px; font-size: 16px;">Secure Elite Talent</a>
         </section>
     </div>
 
     <div class="ticker-wrap"><div class="logos">
-        <span>SCALER</span><span>AIRTEL</span><span>PAYTM</span><span>CASHFREE</span><span>FYND</span><span>HAPTIK</span><span>WISHUP</span><span>NEWTON</span>
-        <span>SCALER</span><span>AIRTEL</span><span>PAYTM</span><span>CASHFREE</span><span>FYND</span><span>HAPTIK</span><span>WISHUP</span><span>NEWTON</span>
+        <span>AIRTEL</span><span>PAYTM</span><span>SCALER</span><span>CASHFREE</span><span>FYND</span><span>HAPTIK</span><span>WISHUP</span><span>NEWTON</span>
+        <span>AIRTEL</span><span>PAYTM</span><span>SCALER</span><span>CASHFREE</span><span>FYND</span><span>HAPTIK</span><span>WISHUP</span><span>NEWTON</span>
     </div></div>
 
-    <div class="container talent-grid">
-        <div class="talent-card">
-            <span class="badge">TOP 1%</span>
-            <div class="monogram">K.J.</div>
-            <h3 style="font-family:'Playfair Display'; margin:0;">Staff Engineer</h3>
-            <p style="font-size:14px; color:var(--muted);">Ex-Cisco, Scale expert.</p>
-            <div class="tag-wrap">
-                <span class="tag">React</span><span class="tag">Node</span><span class="tag">AWS</span>
-            </div>
-        </div>
-        </div>
-
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <a href="#" class="logo" style="color:#fff;">one<span>.</span></a>
-                <p style="opacity:0.4; margin-top:20px; font-size:14px;">The selection mandate for <br>global tech infrastructure.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Client Disciplines</h4>
-                <a href="#">Engineering</a><a href="#">Sales</a><a href="#">GTM Strategy</a>
-            </div>
-            <div class="footer-col">
-                <h4>Talent Resources</h4>
-                <a href="concierge.html">Career Concierge</a><a href="#">Negotiation Prep</a>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="about.html">Our Mandate</a><a href="https://linkedin.com">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Header Scroll Behavior
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) header.classList.add('scrolled');
-            else header.classList.remove('scrolled');
-        });
-
-        // Staggered Reveal Animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 100);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.talent-card').forEach(card => observer.observe(card));
-    </script>
+    <div class="container stats-strip">
+        <div class="stat-card"><h3>98%</h3><p>Retention Rate</p></div>
+        <div class="stat-card"><h3>1%</h3><p>Selection Tier</p></div>
+        <div class="stat-card"><h3>15d</h3><p>Time-to-Hire</p></div>
+    </div>
 </body>
 </html>
