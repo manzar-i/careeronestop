@@ -2,112 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>Representation — one.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,700;1,900&display=swap" rel="stylesheet">
+    <title>Disciplines — one.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #ffffff; --black: #06151a; --accent: #06a4a0; --muted: #64748b; --border: #EEEEEE; --glass: rgba(255, 255, 255, 0.8); }
-        * { box-sizing: border-box; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
-        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--black); line-height: 1.6; overflow-x: hidden; }
+        :root { --mint: #28B8A6; --black: #06151a; --border: rgba(0,0,0,0.06); }
+        body { margin: 0; font-family: 'Inter', sans-serif; }
         .container { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
         
-        header { padding: 20px 0; position: sticky; top: 0; z-index: 1000; background: var(--glass); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
-        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 28px; font-weight: 900; color: var(--black); text-decoration: none; letter-spacing: -1.5px; }
-        .logo span { color: var(--accent); }
-        nav { display: flex; align-items: center; gap: 30px; }
-        .nav-link { text-decoration: none; color: var(--muted); font-weight: 600; font-size: 14px; }
-        .nav-link:hover { color: var(--accent); }
-        .btn-fill { background: var(--accent); color: #fff; padding: 11px 21px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; }
+        header { padding: 20px 0; position: sticky; top:0; background: rgba(255,255,255,0.7); backdrop-filter: blur(15px); z-index: 1000; border-bottom: 1px solid #eee; }
+        .logo { font-family: 'Playfair Display'; font-size: 28px; font-weight: 700; color: var(--black); text-decoration: none; }
+        .logo span { color: var(--mint); }
 
-        .hero { padding: 180px 0 100px; text-align: center; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(50px, 8vw, 95px); line-height: 1.1; margin-bottom: 40px; letter-spacing: -3px; }
-        .hero h1 em { font-style: italic; color: var(--accent); font-weight: 900; }
-        .hero p { max-width: 800px; margin: 0 auto 60px; font-size: 24px; color: var(--muted); line-height: 1.6; }
-
-        .discipline-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; padding-bottom: 120px; }
-        .discipline-card { 
-            background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 80px 60px; 
-            text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            opacity: 0; transform: translateY(20px);
-        }
-        .discipline-card.visible { opacity: 1; transform: translateY(0); }
-        .discipline-card:hover { transform: scale(1.02); border-color: var(--accent); box-shadow: 0 20px 40px rgba(0,0,0,0.05), 0 0 15px rgba(6, 164, 160, 0.1); }
+        .hero { padding: 140px 0 60px; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display'; font-size: 64px; }
         
-        .abstract-sculpture { width: 50px; height: 50px; background: var(--accent); opacity: 0.1; margin-bottom: 30px; border-radius: 2px; }
-        .sc-cube { transform: rotate(45deg); }
-        .sc-spear { width: 4px; height: 50px; background: var(--accent); border-radius: 99px; opacity: 1; }
-
-        .discipline-card h3 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 20px; letter-spacing: -1px; }
-        .discipline-card p { font-size: 18px; color: var(--muted); line-height: 1.6; margin: 0; }
-
-        footer { background: var(--black); color: #fff; padding: 120px 0 60px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; }
-        .footer-col h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 25px; }
-        .footer-col a { display: block; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 12px; font-size: 14px; }
+        /* Glass Cards 10/10 */
+        .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 80px 0; }
+        .pillar-card { 
+            background: rgba(255, 255, 255, 0.4); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid var(--border); 
+            border-radius: 12px; 
+            padding: 60px 40px; 
+            transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .pillar-card:hover { border-color: var(--mint); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.04); }
+        .pillar-card:hover .keyword { color: var(--mint); text-shadow: 0 0 10px var(--mint); }
+        
+        .abstract-icon { width: 50px; height: 50px; margin-bottom: 30px; border: 1px solid var(--mint); transform: rotate(45deg); opacity: 0.6; }
+        .pillar-card h3 { font-family: 'Playfair Display'; font-size: 28px; margin-bottom: 20px; }
+        .pillar-card p { font-size: 16px; color: #64748b; line-height: 1.7; }
     </style>
 </head>
 <body>
-    <header><div class="container nav-flex">
+    <header><div class="container" style="display:flex; justify-content:space-between; align-items:center;">
         <a href="index.html" class="logo">one<span>.</span></a>
-        <nav>
-            <a href="index.html" class="nav-link">Companies</a>
-            <a href="talent.html" class="nav-link" style="color:var(--black);">Talent</a>
-            <a href="concierge.html" class="nav-link">Concierge</a>
-            <a href="about.html" class="nav-link">Mandate</a>
-            <a href="mailto:hiring@careeronestop.in" class="btn-fill">Apply for Representation</a>
-        </nav>
+        <a href="mailto:hiring@careeronestop.in" style="text-decoration:none; color:var(--black); font-weight:700; font-size:14px;">Apply for Representation</a>
     </div></header>
 
     <div class="container">
         <section class="hero">
-            <h1>Stop applying. Start being <em>represented.</em></h1>
-            <p>Access exclusive roles at global scale-ups. We don't just find you a job; we manage your career trajectory and negotiate your worth.</p>
+            <h1>Stop applying. <br><em>Start being represented.</em></h1>
         </section>
 
-        <div class="discipline-grid">
-            <div class="discipline-card">
-                <div class="abstract-sculpture sc-cube"></div>
+        <div class="pillar-grid">
+            <div class="pillar-card">
+                <div class="abstract-icon" style="border-radius: 2px;"></div>
                 <h3>Core Engineering</h3>
-                <p>Massive architectural challenges at Tier-1 global enterprises. For those who build the backbone, not just the features.</p>
+                <p><span class="keyword">Architecture</span>, not just code. We place leads at companies solving massive architectural challenges. Building the backbone of modern tech.</p>
             </div>
-            <div class="discipline-card">
-                <div class="abstract-sculpture sc-spear"></div>
+            <div class="pillar-card">
+                <div class="abstract-icon" style="border-radius: 50%;"></div>
                 <h3>Sales & GTM</h3>
-                <p>High-stakes leadership roles for mid-market AEs and GTM strategists entering the global SaaS arena.</p>
+                <p>Driving <span class="keyword">Global Revenue</span>. From mid-market AEs to high-stakes Strategic Partnerships for Tier-1 SaaS.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="abstract-icon"></div>
+                <h3>Product & Design</h3>
+                <p>For the <span class="keyword">Visionaries</span>. High-impact roles at companies where UX is the primary competitive differentiator.</p>
             </div>
         </div>
     </div>
-
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <a href="#" class="logo" style="color:#fff;">one<span>.</span></a>
-                <p style="opacity:0.4; margin-top:20px; font-size:14px;">The selection mandate for <br>global tech infrastructure.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Disciplines</h4>
-                <a href="#">Engineering</a><a href="#">Sales</a><a href="#">GTM</a>
-            </div>
-            <div class="footer-col">
-                <h4>Talent</h4>
-                <a href="concierge.html">Concierge</a><a href="mailto:hiring@careeronestop.in">Apply</a>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="about.html">About</a><a href="https://linkedin.com">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => { entry.target.classList.add('visible'); }, index * 150);
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.discipline-card').forEach(card => observer.observe(card));
-    </script>
 </body>
 </html>
