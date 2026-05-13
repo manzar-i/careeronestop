@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Career Concierge — Career One Stop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff; --black: #06151a; --accent: #06a4a0; --accent-light: #f0fdfa; --muted: #64748b;
+            --border: rgba(15, 23, 42, 0.08); --font-main: 'Inter', sans-serif; --font-serif: 'Playfair Display', serif;
+        }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: var(--font-main); background: var(--bg); color: var(--black); line-height: 1.6; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        header { padding: 24px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); position: sticky; top:0; background: rgba(255,255,255,0.9); backdrop-filter: blur(12px); z-index: 100; }
+        .logo { font-size: 26px; font-weight: 900; color: var(--accent); text-decoration: none; letter-spacing: -1.5px; }
+        nav a { text-decoration: none; color: var(--muted); font-weight: 600; margin-left: 32px; font-size: 14px; }
+        nav a:hover, .nav-active { color: var(--black); font-weight: 800; }
+        .hero { padding: 140px 0 80px; text-align: center; position: relative; }
+        .hero::before { content: ""; position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 80%; height: 80%; background: radial-gradient(circle, rgba(6, 164, 160, 0.08) 0%, transparent 70%); z-index: -1; filter: blur(60px); }
+        .hero h1 { font-family: var(--font-serif); font-size: 72px; margin: 0 0 24px; }
+        .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px; padding: 60px 0; }
+        .p { padding: 60px 40px; border: 1px solid var(--border); border-radius: 32px; transition: 0.3s; text-align: center;}
+        .p:hover { border-color: var(--accent); transform: translateY(-5px); }
+        footer { background: #000; color: #fff; padding: 80px 0 60px; margin-top: 40px; }
+        .footer-nav a { color: #fff; text-decoration: none; margin-left: 40px; font-size: 15px; opacity: 0.6; }
+    </style>
+</head>
+<body>
+    <header><div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+        <a href="index.html" class="logo">one.</a>
+        <nav>
+            <a href="index.html">For Companies</a>
+            <a href="talent.html">For Talent</a>
+            <a href="about.html">About</a>
+            <a href="concierge.html" class="nav-active">Concierge</a>
+        </nav>
+    </div></header>
+    <div class="container">
+        <section class="hero">
+            <h1>The Agent model for <br><em>high-stakes</em> careers.</h1>
+            <p style="font-size: 22px; color: var(--muted);">Personal talent representation for India's elite professionals.</p>
+        </section>
+        <div class="pillars">
+            <div class="p"><h3>Personal Advocacy</h3><p>Direct, high-intent introductions to VPs and Founders bypassing HR black holes.</p></div>
+            <div class="p"><h3>Negotiation Table</h3><p>We ensure you secure a package that reflects your true worth at the table.</p></div>
+        </div>
+    </div>
+    <footer>
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+            <div><a href="index.html" style="font-size:32px; font-weight:900; color:var(--accent); text-decoration:none;">one.</a></div>
+            <div class="footer-nav"><a href="index.html">Companies</a><a href="talent.html">Talent</a><a href="about.html">About</a><a href="concierge.html">Concierge</a></div>
+        </div>
+    </footer>
+</body>
+</html>
