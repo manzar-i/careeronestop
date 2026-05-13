@@ -3,27 +3,58 @@
 <head>
     <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
     <title>The Mandate — one.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,700;1,900&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #ffffff; --black: #06151a; --accent: #06a4a0; --muted: #64748b; --border: rgba(0,0,0,0.06); --font-main: 'Inter', sans-serif; --font-serif: 'Playfair Display', serif; }
-        * { box-sizing: border-box; }
-        body { margin: 0; font-family: var(--font-main); background: var(--bg); color: var(--black); line-height: 1.2; overflow-x: hidden; }
+        :root { --bg: #ffffff; --black: #06151a; --accent: #06a4a0; --muted: #64748b; --border: #EEEEEE; --glass: rgba(255, 255, 255, 0.8); }
+        * { box-sizing: border-box; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--black); line-height: 1.2; overflow-x: hidden; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-        header { padding: 32px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
-        .logo { font-size: 32px; font-weight: 900; color: var(--black); text-decoration: none; letter-spacing: -2px; }
+        
+        header { padding: 24px 0; border-bottom: 1px solid var(--border); }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 28px; font-weight: 900; color: var(--black); text-decoration: none; letter-spacing: -1.5px; }
         .logo span { color: var(--accent); }
-        nav a { text-decoration: none; color: var(--muted); font-weight: 600; font-size: 15px; margin-left: 40px; }
-        .nav-active { color: var(--black) !important; font-weight: 800; }
-        .mandate-hero { padding: 240px 0 160px; }
-        .mandate-text { font-family: var(--font-serif); font-size: clamp(40px, 7vw, 78px); letter-spacing: -3px; line-height: 1.1; }
+        nav a { text-decoration: none; color: var(--muted); font-weight: 600; font-size: 14px; margin-left: 30px; }
+        .nav-active { color: var(--black) !important; }
+
+        .mandate-section { padding: 220px 0 160px; }
+        .mandate-text { font-family: 'Playfair Display', serif; font-size: clamp(40px, 7vw, 78px); letter-spacing: -3px; line-height: 1.1; opacity: 0; transform: translateY(30px); animation: reveal 1s forwards; }
         .mandate-text strong { color: var(--accent); font-weight: 900; }
-        .cta-footer { margin: 120px 0; padding: 140px 100px; background: var(--black); color: #fff; border-radius: 80px; text-align: center; }
-        .btn-glow { background: var(--accent); color: #fff; padding: 28px 60px; border-radius: 20px; text-decoration: none; font-weight: 800; font-size: 20px; display: inline-block; box-shadow: 0 0 50px rgba(6,164,160,0.5); }
+        
+        .cta-box { margin: 120px 0; padding: 140px 100px; background: var(--black); color: #fff; border-radius: 12px; text-align: center; }
+        .cta-box h2 { font-family: 'Playfair Display', serif; font-size: 64px; margin-bottom: 48px; letter-spacing: -2px; }
+        .btn-glow { 
+            background: var(--accent); color: #fff; padding: 24px 60px; border-radius: 8px; 
+            text-decoration: none; font-weight: 800; font-size: 20px; display: inline-block; 
+            box-shadow: 0 0 50px rgba(6,164,160,0.5); 
+        }
+        .btn-glow:hover { transform: scale(1.05); box-shadow: 0 0 70px rgba(6,164,160,0.7); }
+
+        @keyframes reveal { to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
-    <header><div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;"><a href="index.html" class="logo">one<span>.</span></a><nav><a href="index.html">Companies</a><a href="talent.html">Talent</a><a href="concierge.html">Concierge</a><a href="about.html" class="nav-active">Mandate</a></nav></div></header>
-    <div class="container mandate-hero"><div class="mandate-text">Recruitment is broken. Most firms focus on volume. We operate on a <strong>High-Conviction Selection Mandate.</strong> one. is the infrastructure for founders who don't want more candidates, but the <strong>only</strong> ones that matter.</div></div>
-    <div class="container"><section class="cta-footer"><h2 style="font-family: var(--font-serif); font-size: 64px; margin-bottom: 48px;">Ready to build?</h2><a href="mailto:hiring@careeronestop.in" class="btn-glow">Request Talent Access</a></section></div>
+    <header><div class="container nav-flex">
+        <a href="index.html" class="logo">one<span>.</span></a>
+        <nav>
+            <a href="index.html">Companies</a>
+            <a href="talent.html">Talent</a>
+            <a href="concierge.html">Concierge</a>
+            <a href="about.html" class="nav-active">Mandate</a>
+        </nav>
+    </div></header>
+
+    <div class="container mandate-section">
+        <div class="mandate-text">
+            Recruitment is broken. Most firms focus on volume. We operate on a <strong>High-Conviction</strong> Selection Mandate. one. is the infrastructure for founders who don't want more candidates, but the <strong>only</strong> ones that matter.
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="cta-box">
+            <h2>Ready to build?</h2>
+            <a href="mailto:hiring@careeronestop.in" class="btn-glow">Request Talent Access</a>
+        </section>
+    </div>
 </body>
 </html>
