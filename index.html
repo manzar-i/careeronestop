@@ -5,33 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Career One Stop</title>
   
+  <!-- 1. Tailwind CSS for Styling -->
   <script src="https://cdn.tailwindcss.com"></script>
   
+  <!-- 2. React & ReactDOM (Core Engines) -->
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
   
+  <!-- 3. Lucide Icons for Visuals -->
   <script src="https://unpkg.com/lucide-react@0.344.0/dist/umd/lucide-react.js"></script>
   
+  <!-- 4. Firebase Connectors -->
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
   
+  <!-- 5. In-Browser Babel Compiler -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
-<body>
+<body class="bg-[#fdfdfd]">
 
+  <!-- Built-in Error Detector: Shows a message here instead of a blank page if something goes wrong -->
+  <div id="error-display" style="display:none; color:#b91c1c; padding:24px; font-family:sans-serif; background:#fef2f2; margin:20px; border: 2px solid #fca5a5; border-radius:12px; max-w-2xl mx-auto;">
+    <h3 style="font-weight:bold; margin-bottom:8px; font-size:18px;">Website Loading Snag Detoured:</h3>
+    <p style="font-size:14px; color:#4b5563; margin-bottom:12px;">The browser hit an issue running the page script:</p>
+    <pre id="error-text" style="background:#fff; padding:12px; border-radius:6px; font-size:12px; overflow-x:auto; border:1px solid #e5e7eb;"></pre>
+  </div>
+
+  <script>
+    // Global error listener to show crashes on-screen for easy fixing
+    window.addEventListener('error', function(e) {
+      document.getElementById('error-display').style.display = 'block';
+      document.getElementById('error-text').textContent += '\n' + e.message + ' (Line ' + e.lineno + ')';
+    });
+  </script>
+
+  <!-- This is where your website loads -->
   <div id="root"></div>
 
+  <!-- Your Website Code -->
   <script type="text/babel">
     const { useState, useEffect, useRef } = React;
+    
+    // Defensive Icon Loading Layer to prevent white-screen crashes if CDN names differ
+    const iconKeys = [
+      'Shield', 'Cpu', 'BarChart3', 'Compass', 'ArrowUpRight', 'Plus', 'ChevronRight',
+      'UserCheck', 'Zap', 'Globe', 'Star', 'Fingerprint', 'Target', 'Scan', 'Activity',
+      'Layers', 'Search', 'Filter', 'CheckCircle2', 'Users', 'MoveRight', 'Database',
+      'Eye', 'Network', 'X', 'Loader2', 'Check', 'Phone'
+    ];
+    const availableIcons = window.LucideReact || window.lucide || {};
+    const SafeIcons = {};
+    iconKeys.forEach(key => {
+      SafeIcons[key] = availableIcons[key] || ((props) => <span className={props.className}>■</span>);
+    });
+
     const { 
       Shield, Cpu, BarChart3, Compass, ArrowUpRight, Plus, ChevronRight,
       UserCheck, Zap, Globe, Star, Fingerprint, Target, Scan, Activity,
       Layers, Search, Filter, CheckCircle2, Users, MoveRight, Database,
       Eye, Network, X, Loader2, Check, Phone
-    } = LucideReact;
-    
-    const InfinityIcon = LucideReact.Infinity || (() => <span>∞</span>);
+    } = SafeIcons;
 
     // Safe Firebase System Initialization
     const getFirebaseConfig = () => {
